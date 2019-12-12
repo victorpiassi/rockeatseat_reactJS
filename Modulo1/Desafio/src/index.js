@@ -30,6 +30,13 @@ class App extends Component {
                 username: "Bill Gates",
                 time_ago: "17",
                 text: "Todo mundo tem cliente. Só traficante e analista de sistemas é que tem usuário."
+            },
+            {
+                id: 4,
+                image_url: "https://img.etimg.com/thumb/width-640,height-480,imgsize-436664,resizemode-1,msid-72360263/joker-fame-joaquin-phoenix-a-vegan-since-3-named-petas-person-of-the-year.jpg",
+                username: "Joaquin Phoenix",
+                time_ago: "3",
+                text: "Você pode se vingar do mal, sem se tornar parte dele?"
             }
         ]
     }

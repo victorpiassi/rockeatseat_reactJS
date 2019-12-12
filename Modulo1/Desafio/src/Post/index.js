@@ -10,12 +10,11 @@ export default class Post extends Component {
         return (
             <div className="post">
                 <PostHeader src={data.image_url}>
-                    {data.username}
+                    <span id="username">{data.username}</span>
                     <br />
-                    Há {data.time_ago} minutos
+                    <span id="time-ago">Há {data.time_ago} minutos</span>
                 </PostHeader>
-                {this.props.children}
-                <p>{this.props.text}</p>
+                <p>{data.text}</p>
             </div>
         )
     }

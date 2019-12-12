@@ -7,9 +7,9 @@ export default class PostHeader extends Component {
         return (
             <div className="post-header">
                 <img src={this.props.src} className="profile-photo" />
-                <div>
+                <p>
                     {this.props.children}
-                </div>
+                </p>
             </div>
         )
     }
