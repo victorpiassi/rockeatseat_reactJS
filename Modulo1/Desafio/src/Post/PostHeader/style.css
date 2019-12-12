@@ -1,0 +1,16 @@
+.post-header{
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #bbb;
+    height: 40%;
+    width: 100%;
+    margin: 10px;
+    background-color: green;
+}
+.profile-photo{
+    image-rendering: optimizeQuality;
+    width: 45px;
+    height: 50px;
+    border-radius: 50px;
+}
+
