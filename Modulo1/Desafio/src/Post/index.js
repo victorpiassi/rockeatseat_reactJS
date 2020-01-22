@@ -9,11 +9,7 @@ export default class Post extends Component {
         const { data } = this.props
         return (
             <div className="post">
-                <PostHeader src={data.image_url}>
-                    <span id="username">{data.username}</span>
-                    <br />
-                    <span id="time-ago">Há {data.time_ago} minutos</span>
-                </PostHeader>
+                <PostHeader src={data.image_url} data={data} />
                 <p>{data.text}</p>
             </div>
         )
