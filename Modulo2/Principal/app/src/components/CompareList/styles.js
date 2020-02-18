@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import 'font-awesome/css/font-awesome.css'
 
-export const Container = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
