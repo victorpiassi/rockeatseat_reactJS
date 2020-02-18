@@ -3,17 +3,21 @@ import PropTypes from "prop-types"
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as FavoriteActions from "../../store/actions/favorites"
+import { Creators as FavoriteActions } from "../../store/ducks/favorites"
 
 class Main extends Component {
     static propTypes = {
-        addFavorite: PropTypes.func.isRequired,
-        favorites: PropTypes.arrayOf(PropTypes.shape({
-            id: PropTypes.number,
-            name: PropTypes.string,
-            description: PropTypes.string,
-            url: PropTypes.string
-        })).isRequired
+        addFavoriteRequest: PropTypes.func.isRequired,
+        favorites: PropTypes.shape({
+            loading: PropTypes.bool,
+            data: PropTypes.arrayOf(PropTypes.shape({
+                id: PropTypes.number,
+                name: PropTypes.string,
+                description: PropTypes.string,
+                url: PropTypes.string
+            })),
+            error: PropTypes.oneOfType(null, PropTypes.string)
+        }).isRequired
     }
 
     state = {
@@ -23,7 +27,8 @@ class Main extends Component {
 
     handleAddRepository = (event) => {
         event.preventDefault();
-        this.props.addFavorite();
+        this.props.addFavoriteRequest(this.state.repositoryInput);
+        this.setState({ repositoryInput: "" })
     }
 
     render() {
@@ -38,15 +43,17 @@ class Main extends Component {
                         })}
                     />
                     <button type="submit">Adicionar</button>
+                    {this.props.favorites.loading && <span> Carregando...</span>}
+                    {!!this.props.favorites.error && <span style={{ color: "#DD4040" }}> {this.props.favorites.error}</span>}
                 </form>
                 <ul>
-                    {this.props.favorites.map(favorite => (
+                    {this.props.favorites.data.map(favorite => (
                         <li key={favorite.id}>
                             <p>
                                 <strong>{favorite.name}</strong>
                                 ({favorite.description})
                             </p>
-                            <a href={favorite.url}>Acessar</a>
+                            <a target="_blank" rel="noopener noreferrer" href={favorite.url}>Acessar</a>
                         </li>
                     ))}
                 </ul>
@@ -56,7 +63,7 @@ class Main extends Component {
 }
 const mapStateToProps = state => ({
     favorites: state.favorites,
-
+    loading: state.loading
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(FavoriteActions, dispatch)
