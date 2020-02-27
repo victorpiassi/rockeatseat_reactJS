@@ -5,11 +5,19 @@ import store from "./store"
 
 import Routes from "./routes"
 
+import GlobalStyle from "./pages/global"
+
+import './config/ReactotronConfig'
+
+
 function App() {
   return (
-    <Provider store={store}>
-      <Routes />
-    </Provider>
+    <>
+      <Provider store={store}>
+        <GlobalStyle />
+        <Routes />
+      </Provider>
+    </>
   );
 }
 

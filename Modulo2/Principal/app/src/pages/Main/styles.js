@@ -22,7 +22,7 @@ export const Form = styled.form`
         color: #444;
         border-radius: 20px;
         transition: border 0.2s;
-        border: ${props => (props.withError ? '2px solid #F33' : 0)}
+        border: ${props => (props.withError ? '2px solid #F33' : 0)};
     }
 
     button{

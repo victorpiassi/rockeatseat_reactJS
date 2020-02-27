@@ -63,7 +63,8 @@ class Main extends Component {
 }
 const mapStateToProps = state => ({
     favorites: state.favorites,
-    loading: state.loading
+    loading: state.loading,
+    error: state.error
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(FavoriteActions, dispatch)

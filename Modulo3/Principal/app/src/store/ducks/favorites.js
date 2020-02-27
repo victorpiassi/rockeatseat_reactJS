@@ -3,7 +3,7 @@
 export const Types = {
     ADD_REQUEST: "favorites/ADD_REQUEST",
     ADD_SUCCESS: "favorites/ADD_SUCCESS",
-    ADD_FAILURE: "favorites/ADD_FAILURE",
+    ADD_FAILURE: "favorites/ADD_FAILURE"
 };
 
 // *** ACTION *** //
