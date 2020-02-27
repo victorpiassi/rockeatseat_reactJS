@@ -16,15 +16,13 @@ export const Creators = {
 
 // *** REDUCER *** //
 
-const INITIAL_STATE = {
-    theme: "streets-v11"
-}
+const INITIAL_STATE = "streets-v11"
 
 
 export default function theme(state = INITIAL_STATE, action) {
     switch (action.type) {
         case Types.SET_THEME:
-            return { ...state, theme: action.payload.theme }
+            return action.payload.theme
         default:
             return state;
     }

@@ -62,7 +62,7 @@ class Map extends Component {
                 style={{ position: "absolute" }}
                 {...this.state.viewport}
                 onClick={this.handleMapClick}
-                mapStyle={`mapbox://styles/mapbox/${this.props.theme.theme}`}
+                mapStyle={`mapbox://styles/mapbox/${this.props.theme}`}
                 mapboxApiAccessToken={
                     "pk.eyJ1IjoiZGllZ28zZyIsImEiOiJjamh0aHc4em0wZHdvM2tyc3hqbzNvanhrIn0.3HWnXHy_RCi35opzKo8sHQ"
                 }

@@ -18,7 +18,7 @@ class Item extends Component {
                     <span id="login">{this.props.data.login}</span>
                 </div>
                 <img alt="" id="remove" onClick={this.handleRemoveProfile} src="https://image.flaticon.com/icons/svg/753/753345.svg" />
-                <a href={this.props.data.profile_url} target="_blank"><img alt="" id="access" src="https://image.flaticon.com/icons/svg/709/709586.svg" /></a>
+                <a href={this.props.data.profile_url} target="_blank" rel="noopener noreferrer"><img alt="" id="access" src="https://image.flaticon.com/icons/svg/709/709586.svg" /></a>
             </Container>
         )
     }
